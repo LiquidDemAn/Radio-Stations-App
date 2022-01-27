@@ -1,0 +1,10 @@
+.play-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50%;
+    border: 2px solid #E6E8EC;
+    background-color: inherit;
+    cursor: pointer;
+}

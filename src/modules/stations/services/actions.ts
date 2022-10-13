@@ -22,8 +22,8 @@ export const loadCountries = createAsyncThunk<Country[]>(
 	}
 );
 
-export const loadFavStations = createAsyncThunk<Station[]>(
-	'stations/load-fav-stations',
+export const loadFavouriteStations = createAsyncThunk<Station[]>(
+	'stations/load-favourite-stations',
 	async () => {
 		const ids: string[] = JSON.parse(localStorage.favourites);
 
@@ -52,7 +52,6 @@ export const setSelectedCountry = createAction<{ selectedCountry: string }>(
 export const deleteFavouriteStation = createAction<{ id: string }>(
 	'stations/delete-favourite'
 );
-export const clearFavouriteStations = createAction('stations/clear-favourites');
 export const changeIsPlay = createAction<{ isPlay: boolean }>(
 	'stations/change-isPause'
 );

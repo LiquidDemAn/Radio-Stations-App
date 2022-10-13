@@ -4,14 +4,11 @@ export type stationsStateType = {
 	allStations: {
 		[country: string]: Station[];
 	};
-	favouriteStations: {
-		[id: string]: boolean;
-	};
+	favouriteStations: Station[];
 	activeStation: {
 		station?: Station;
 		isPlay: boolean;
 	};
 	countries: Country[];
 	selectedCountry?: string;
-	fav: Station[];
 };

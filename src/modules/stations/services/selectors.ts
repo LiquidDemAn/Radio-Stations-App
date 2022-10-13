@@ -13,7 +13,9 @@ export const getSelectedCountry = (state: AppState) =>
 	state.stations.selectedCountry;
 
 export const getFavouriteStatus = (state: AppState, stationId: string) => {
-	const stationsIds = state.stations.fav.map((item) => item.stationuuid);
+	const stationsIds = state.stations.favouriteStations.map(
+		(item) => item.stationuuid
+	);
 	return stationsIds.includes(stationId);
 };
 
@@ -23,16 +25,5 @@ export const getStationsByCountry = (state: AppState) => {
 };
 
 export const getFavouriteStations = (state: AppState) => {
-	const favouriteIds = state.stations.favouriteStations;
-	const favouriteStations = [];
-	for (let country in state.stations.allStations) {
-		favouriteStations.push(
-			...state.stations.allStations[country].filter(
-				(station) => favouriteIds[station.stationuuid]
-			)
-		);
-	}
-	return favouriteStations;
+	return state.stations.favouriteStations;
 };
-
-export const getFavStaitons = (state: AppState) => state.stations.fav;

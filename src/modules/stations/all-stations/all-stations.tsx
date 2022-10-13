@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import { Col, Row } from 'react-bootstrap';
 import { StationCard } from '../components/station-card';
 import {
 	loadCountries,
-	loadFavStations,
+	loadFavouriteStations,
 	loadStationsByCountry,
 } from '../services/actions';
 import { useDispatch } from 'react-redux';
@@ -24,29 +24,9 @@ export const AllStations = () => {
 	const activeStation = useAppSelector(getActiveStation);
 	const stations = useAppSelector(getStationsByCountry);
 
-	const test = () => {
-		[
-			'962e5c39-0601-11e8-ae97-52543be04c81',
-			'9619c637-0601-11e8-ae97-52543be04c81',
-			'ea5af7a2-7107-476f-9cee-94904d48ddbe',
-		].forEach((item) => {
-			fetch(`http://all.api.radio-browser.info/json/stations/byuuid/${item}`)
-				.then((response) => {
-					return response.json();
-				})
-				.then((data) => {
-					console.log(data);
-				});
-		});
-	};
-
-	useEffect(() => {
-		// test();
-		dispatch(loadFavStations());
-	}, []);
-
 	useEffect(() => {
 		dispatch(loadCountries());
+		dispatch(loadFavouriteStations());
 	}, [dispatch]);
 
 	useEffect(() => {
@@ -56,6 +36,8 @@ export const AllStations = () => {
 			}
 		}
 	}, [dispatch, stations, selectedCountry]);
+
+	
 
 	return (
 		<div>

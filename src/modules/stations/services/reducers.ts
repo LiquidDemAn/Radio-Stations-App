@@ -3,23 +3,21 @@ import {
 	loadCountries,
 	loadStationsByCountry,
 	changeIsPlay,
-	clearFavouriteStations,
 	deleteFavouriteStation,
 	setFavouriteStation,
 	setActiveStation,
 	setSelectedCountry,
-	loadFavStations,
+	loadFavouriteStations,
 } from './actions';
 import { stationsStateType } from './typedef';
 
 const stationsState: stationsStateType = {
 	allStations: {},
-	favouriteStations: {},
+	favouriteStations: [],
 	activeStation: {
 		isPlay: false,
 	},
 	countries: [],
-	fav: [],
 };
 
 export const stations = createReducer(stationsState, (builder) =>
@@ -42,21 +40,18 @@ export const stations = createReducer(stationsState, (builder) =>
 		})
 
 		.addCase(setFavouriteStation, (state, { payload }) => {
-			state.fav.push(payload);
+			state.favouriteStations.push(payload);
 			// state.favouriteStations[payload.id] = payload.value;
 		})
 
-		.addCase(loadFavStations.fulfilled, (state, { payload }) => {
-			state.fav = payload;
+		.addCase(loadFavouriteStations.fulfilled, (state, { payload }) => {
+			state.favouriteStations = payload;
 		})
 
 		.addCase(deleteFavouriteStation, (state, { payload }) => {
-			state.fav = state.fav.filter((item) => item.stationuuid !== payload.id);
-			delete state.favouriteStations[payload.id];
-		})
-
-		.addCase(clearFavouriteStations, (state) => {
-			state.favouriteStations = {};
+			state.favouriteStations = state.favouriteStations.filter(
+				(item) => item.stationuuid !== payload.id
+			);
 		})
 
 		.addCase(changeIsPlay, (state, { payload }) => {

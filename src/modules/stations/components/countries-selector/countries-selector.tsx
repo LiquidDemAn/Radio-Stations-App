@@ -18,7 +18,7 @@ export const CountriesSelector = ({ countries }: Props) => {
 
 	return (
 		<>
-			<select onChange={onSelectCountry} className='mb-3 d-block m-auto p-2'>
+			<select onChange={onSelectCountry} className='select'>
 				{countries.map((country) => (
 					<option
 						key={country.name}

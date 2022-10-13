@@ -24,18 +24,17 @@ export const StationCardView = ({
 	activeStationIsPlay,
 }: Props) => {
 	return (
-		<Card style={{ minHeight: '270px' }}>
+		<Card className='station-card'>
 			<Card.Body>
 				<Card.Title>{station.name}</Card.Title>
 				<Row>
 					<Col lg={4}>
 						{station.favicon ? (
 							<img
+								className='station-card__img'
 								alt={station.name}
 								src={station.favicon}
-								style={{ height: '150px' }}
 								loading='lazy'
-								className='w-100'
 							/>
 						) : (
 							<BiRadio style={{ height: '150px' }} size='100%' />

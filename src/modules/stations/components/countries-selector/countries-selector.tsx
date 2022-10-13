@@ -12,6 +12,7 @@ export const CountriesSelector = ({ countries }: Props) => {
 
 	const onSelectCountry = (event: React.ChangeEvent<HTMLSelectElement>) => {
 		const country = event.target.value;
+		localStorage.country = country;
 		dispatch(setSelectedCountry({ selectedCountry: country }));
 	};
 
@@ -19,7 +20,11 @@ export const CountriesSelector = ({ countries }: Props) => {
 		<>
 			<select onChange={onSelectCountry} className='mb-3 d-block m-auto p-2'>
 				{countries.map((country) => (
-					<option key={country.name} value={country.name}>
+					<option
+						key={country.name}
+						selected={localStorage.country === country.name}
+						value={country.name}
+					>
 						{country.name}
 					</option>
 				))}

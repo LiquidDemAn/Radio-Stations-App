@@ -28,7 +28,7 @@ export const stations = createReducer(stationsState, (builder) =>
 
 		.addCase(loadCountries.fulfilled, (state, { payload }) => {
 			state.countries = payload;
-			state.selectedCountry = payload[0].name;
+			// state.selectedCountry = payload[0].name;
 		})
 
 		.addCase(setSelectedCountry, (state, { payload }) => {

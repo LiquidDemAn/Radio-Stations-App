@@ -5,6 +5,7 @@ import {
 	loadCountries,
 	loadFavouriteStations,
 	loadStationsByCountry,
+	setSelectedCountry,
 } from '../services/actions';
 import { useDispatch } from 'react-redux';
 import { useAppSelector } from '../../../store/hooks';
@@ -32,12 +33,20 @@ export const AllStations = () => {
 	useEffect(() => {
 		if (selectedCountry) {
 			if (!stations) {
-				dispatch(loadStationsByCountry(selectedCountry));
+				dispatch(loadStationsByCountry(localStorage.country));
 			}
 		}
 	}, [dispatch, stations, selectedCountry]);
 
-	
+	useEffect(() => {
+		const selectedCountry = localStorage.country;
+
+		if (!selectedCountry) {
+			localStorage.country = countries[0].name;
+		} else {
+			dispatch(setSelectedCountry({ selectedCountry }));
+		}
+	}, [dispatch, countries]);
 
 	return (
 		<div>

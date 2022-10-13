@@ -39,12 +39,12 @@ export const AllStations = () => {
 	}, [dispatch, stations, selectedCountry]);
 
 	useEffect(() => {
-		const selectedCountry = localStorage.country;
-
-		if (!selectedCountry) {
+		if (!localStorage.country && countries.length) {
 			localStorage.country = countries[0].name;
-		} else {
-			dispatch(setSelectedCountry({ selectedCountry }));
+		}
+
+		if (localStorage.country) {
+			dispatch(setSelectedCountry({ selectedCountry: localStorage.country }));
 		}
 	}, [dispatch, countries]);
 

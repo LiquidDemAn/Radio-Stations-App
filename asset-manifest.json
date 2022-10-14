@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/Radio-Stations-App/static/css/main.fcfe2a46.chunk.css",
+    "main.js": "/Radio-Stations-App/static/js/main.04132a91.chunk.js",
+    "main.js.map": "/Radio-Stations-App/static/js/main.04132a91.chunk.js.map",
+    "runtime-main.js": "/Radio-Stations-App/static/js/runtime-main.b192211d.js",
+    "runtime-main.js.map": "/Radio-Stations-App/static/js/runtime-main.b192211d.js.map",
+    "static/css/2.0a9ec390.chunk.css": "/Radio-Stations-App/static/css/2.0a9ec390.chunk.css",
+    "static/js/2.c69ae247.chunk.js": "/Radio-Stations-App/static/js/2.c69ae247.chunk.js",
+    "static/js/2.c69ae247.chunk.js.map": "/Radio-Stations-App/static/js/2.c69ae247.chunk.js.map",
+    "static/js/3.9066cc5b.chunk.js": "/Radio-Stations-App/static/js/3.9066cc5b.chunk.js",
+    "static/js/3.9066cc5b.chunk.js.map": "/Radio-Stations-App/static/js/3.9066cc5b.chunk.js.map",
+    "index.html": "/Radio-Stations-App/index.html",
+    "static/css/2.0a9ec390.chunk.css.map": "/Radio-Stations-App/static/css/2.0a9ec390.chunk.css.map",
+    "static/css/main.fcfe2a46.chunk.css.map": "/Radio-Stations-App/static/css/main.fcfe2a46.chunk.css.map",
+    "static/js/2.c69ae247.chunk.js.LICENSE.txt": "/Radio-Stations-App/static/js/2.c69ae247.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.b192211d.js",
+    "static/css/2.0a9ec390.chunk.css",
+    "static/js/2.c69ae247.chunk.js",
+    "static/css/main.fcfe2a46.chunk.css",
+    "static/js/main.04132a91.chunk.js"
+  ]
+}
